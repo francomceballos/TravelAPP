@@ -26,10 +26,9 @@
 ?>
 
 
-<div class="reservation-form">
+<div class="reservation-form ">
     <div class="container">
-      <div class="row">
-        
+      <div class="row ">
         <div class="col-lg-12">
           <form id="reservation-form" name="gs" method="POST" role="search" action="register.php">
             <div class="row">

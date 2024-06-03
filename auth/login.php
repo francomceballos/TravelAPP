@@ -30,6 +30,7 @@
       $_SESSION['loggedIn'] = true;
       header('location: ../index.php');
     }
+  }
 
 
 ?>
