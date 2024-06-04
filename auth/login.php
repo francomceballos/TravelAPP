@@ -23,12 +23,14 @@
 
   if($login->rowCount() > 0) {
     if(password_verify($password, $fetch['mypassword'])) {
-      $_SESSION['id'] = $fetch['id'];
-      $_SESSION['name'] = $fetch['name'];
-      $_SESSION['email'] = $fetch['email'];
-      $_SESSION['role'] = $fetch['role'];
-      $_SESSION['loggedIn'] = true;
+
+      $_SESSION['user_id'] = $fetch['id'];
+      $_SESSION['username'] = $fetch['username'];
+
       header('location: ../index.php');
+
+    }else {
+      echo '<div class="alert alert-danger" role="alert">The password is incorrect.</div>';
     }
   }
 

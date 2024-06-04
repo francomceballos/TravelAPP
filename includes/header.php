@@ -2,6 +2,8 @@
 
     define('BASE_URL', 'http://localhost/TravelAPP/');
 
+    session_start();
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -65,6 +67,18 @@ https://templatemo.com/tm-580-woox-travel
                         <li><a href="index.php" class="active">Home</a></li>
                         <li><a href="about.php">About</a></li>
                         <li><a href="deals.php">Deals</a></li>
+                        <!-- user menu -->
+                        <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          <?php echo $_SESSION['username']; ?>
+                        </a>
+                          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                          <li><a class="dropdown-item" href="#">Action</a></li>
+                          <li><a class="dropdown-item" href="#">Another action</a></li>
+                          <li><hr class="dropdown-divider"></li>
+                          <li><a class="dropdown-item" href="logout.php">Log out</a></li>
+                          </ul>
+                        </li>
                         <li><a href="<?php echo BASE_URL; ?>auth/login.php">Login</a></li>
                         <li><a href="<?php echo BASE_URL; ?>auth/register.php">Register</a></li>
                     </ul>   
