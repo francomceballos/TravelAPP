@@ -3,6 +3,11 @@
 <?php require '../config/config.php';?>
 <?php
     
+    if(isset($_SESSION['username'])) {
+        header("Location: index.php");
+    }
+
+
     if(isset($_POST['submit'])) {
         if(empty($_POST['username']) || empty($_POST['email']) || empty($_POST['password'])) {
             echo "Please fill in all fields";

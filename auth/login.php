@@ -2,6 +2,10 @@
 <?php require '../config/config.php'; ?>
 <?php
 
+  if(isset($_SESSION['username'])) {
+    header("Location: ".BASE_URL."");
+  }
+
   //take the data from the form
 
   if(isset($_POST['submit'])) {
@@ -30,12 +34,12 @@
       header('location: ../index.php');
 
     }else {
-      echo '<div class="alert alert-danger" role="alert">The password is incorrect.</div>';
+      echo '<div class="alert alert-danger" style="margin-top: 50px;" role="alert">The password is incorrect.</div>';
     }
   }
 
 
-?>
+?>  
 
   <div class="reservation-form">
     <div class="container">
