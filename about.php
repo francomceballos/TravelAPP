@@ -24,12 +24,13 @@
 ?>
 
   <!-- ***** Main Banner Area Start ***** -->
-  <div class="about-main-content">
+  <div class="about-main-content" style="background-image: url(assets/images/<?php echo $singleCountry->image; ?>)">
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
-          <div class="content">
-            <div class="blur-bg"></div>
+          <div class="content" >
+            <div class="blur-bg" style="background-image: url(assets/images/<?php echo $singleCountry->image; ?>)">
+          </div> <div class="line-dec"></div>
             <h4>EXPLORE OUR COUNTRY</h4>
             <div class="line-dec"></div>
             <h2>Welcome To <?php echo $singleCountry->name; ?></h2>
@@ -44,12 +45,12 @@
   <!-- ***** Main Banner Area End ***** -->
   
   <div class="cities-town">
-    <div class="container">
-      <div class="row">
+    <div class="container" style="background-image: url(assets/images/<?php echo $singleCountry->image; ?>)">
+      <div class="row" >
         <div class="slider-content">
           <div class="row">
             <div class="col-lg-12">
-              <h2><?php echo $singleCountry->name; ?> <em>Cities &amp; Towns</em></h2>
+              <h2><?php echo $singleCountry->name; ?>'s <em>Cities &amp; Towns</em></h2>
             </div>
             <div class="col-lg-12">
               <div class="owl-cites-town owl-carousel">
