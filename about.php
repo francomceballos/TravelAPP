@@ -1,77 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
+  require "includes/header.php";
+  require "config/config.php";
 
-  <head>
+  if(isset($_GET['id'])) {
+    $id = $_GET['id'];
+    $country = $conn->query("SELECT * FROM countries WHERE id = '$id'");
+    $country->execute();
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    $singleCountry = $country->fetch(PDO::FETCH_OBJ);
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-    <title>WoOx Travel - About Us</title>
+    $citiesImages = $conn->query("SELECT * FROM cities WHERE country_id = '$id'");
+    $citiesImages->execute();
 
-    <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    $singleImage = $citiesImages->fetchAll(PDO::FETCH_OBJ);
 
-    <!-- Additional CSS Files -->
-    <link rel="stylesheet" href="assets/css/fontawesome.css">
-    <link rel="stylesheet" href="assets/css/templatemo-woox-travel.css">
-    <link rel="stylesheet" href="assets/css/owl.css">
-    <link rel="stylesheet" href="assets/css/animate.css">
-    <link rel="stylesheet"href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
-<!--
+  }
 
-TemplateMo 580 Woox Travel
 
-https://templatemo.com/tm-580-woox-travel
 
--->
-  </head>
 
-<body>
 
-  <!-- ***** Preloader Start ***** -->
-  <div id="js-preloader" class="js-preloader">
-    <div class="preloader-inner">
-      <span class="dot"></span>
-      <div class="dots">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-    </div>
-  </div>
-  <!-- ***** Preloader End ***** -->
-
-  <!-- ***** Header Area Start ***** -->
-  <header class="header-area header-sticky">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <nav class="main-nav">
-                    <!-- ***** Logo Start ***** -->
-                    <a href="index.html" class="logo">
-                        <img src="assets/images/logo.png" alt="">
-                    </a>
-                    <!-- ***** Logo End ***** -->
-                    <!-- ***** Menu Start ***** -->
-                    <ul class="nav">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="deals.html">Deals</a></li>
-                      
-                        <li><a href="login.html">Login</a></li>
-                        <li><a href="register.html">Register</a></li>
-                    </ul>   
-                    <a class='menu-trigger'>
-                        <span>Menu</span>
-                    </a>
-                    <!-- ***** Menu End ***** -->
-                </nav>
-            </div>
-        </div>
-    </div>
-  </header>
-  <!-- ***** Header Area End ***** -->
+?>
 
   <!-- ***** Main Banner Area Start ***** -->
   <div class="about-main-content">
@@ -82,8 +32,8 @@ https://templatemo.com/tm-580-woox-travel
             <div class="blur-bg"></div>
             <h4>EXPLORE OUR COUNTRY</h4>
             <div class="line-dec"></div>
-            <h2>Welcome To Caribbean</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt uttersi labore et dolore magna aliqua is ipsum suspendisse ultrices gravida</p>
+            <h2>Welcome To <?php echo $singleCountry->name; ?></h2>
+            <p><?php echo $singleCountry->description; ?></p>
             <div class="main-button">
             </div>
           </div>
@@ -99,58 +49,18 @@ https://templatemo.com/tm-580-woox-travel
         <div class="slider-content">
           <div class="row">
             <div class="col-lg-12">
-              <h2>Caribbean’s <em>Cities &amp; Towns</em></h2>
+              <h2><?php echo $singleCountry->name; ?> <em>Cities &amp; Towns</em></h2>
             </div>
             <div class="col-lg-12">
               <div class="owl-cites-town owl-carousel">
+                <?php foreach($singleImage as $image) : ?>
                 <div class="item">
                   <div class="thumb">
-                    <img src="assets/images/cities-01.jpg" alt="">
-                    <h4>Havana</h4>
+                    <img src="assets/images/<?php echo $image->image; ?>" style="height: 300px" alt="">
+                    <h4><?php echo $image->name; ?> </h4>
                   </div>
                 </div>
-                <div class="item">
-                  <div class="thumb">
-                    <img src="assets/images/cities-02.jpg" alt="">
-                    <h4>Kingston</h4>
-                  </div>
-                </div>
-                <div class="item">
-                  <div class="thumb">
-                    <img src="assets/images/cities-03.jpg" alt="">
-                    <h4>George Town</h4>
-                  </div>
-                </div>
-                <div class="item">
-                  <div class="thumb">
-                    <img src="assets/images/cities-04.jpg" alt="">
-                    <h4>Santo Domingo</h4>
-                  </div>
-                </div>
-                <div class="item">
-                  <div class="thumb">
-                    <img src="assets/images/cities-01.jpg" alt="">
-                    <h4>Havana</h4>
-                  </div>
-                </div>
-                <div class="item">
-                  <div class="thumb">
-                    <img src="assets/images/cities-02.jpg" alt="">
-                    <h4>Kingston</h4>
-                  </div>
-                </div>
-                <div class="item">
-                  <div class="thumb">
-                    <img src="assets/images/cities-03.jpg" alt="">
-                    <h4>George Town</h4>
-                  </div>
-                </div>
-                <div class="item">
-                  <div class="thumb">
-                    <img src="assets/images/cities-04.jpg" alt="">
-                    <h4>Santo Domingo</h4>
-                  </div>
-                </div>
+                <?php endforeach; ?>
               </div>
             </div>
           </div>
@@ -331,39 +241,7 @@ https://templatemo.com/tm-580-woox-travel
     </div>
   </div>
 
+<?php
+require "includes/footer.php";
+?>
 
-  
-  <footer>
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <p>Copyright © 2036 <a href="#">WoOx Travel</a> Company. All rights reserved. 
-          <br>Design: <a href="https://templatemo.com" target="_blank" title="free CSS templates">TemplateMo</a> Distribution: <a href="https://themewagon.com target="_blank" >ThemeWagon</a></p>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-
-  <!-- Scripts -->
-  <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-
-  <script src="assets/js/isotope.min.js"></script>
-  <script src="assets/js/owl-carousel.js"></script>
-  <script src="assets/js/wow.js"></script>
-  <script src="assets/js/tabs.js"></script>
-  <script src="assets/js/popup.js"></script>
-  <script src="assets/js/custom.js"></script>
-
-  <script>
-    $(".option").click(function(){
-      $(".option").removeClass("active");
-      $(this).addClass("active"); 
-    });
-  </script>
-
-  </body>
-
-</html>

@@ -163,6 +163,7 @@ body {
   transition: all .3s;
   position: relative;
   overflow: hidden;
+  backdrop-filter: blur(10px);
 }
 
 .border-button a:hover {
@@ -323,7 +324,7 @@ Header Style
 */
 
 .background-header {
-  background-color: #22b3c1 !important;
+  backdrop-filter: blur(5px);
   height: 70px!important;
   position: fixed!important;
   top: 0!important;
@@ -337,9 +338,9 @@ Header Style
 }
 
 .header-area {
-  background-color: #22b3c1;
   position: absolute;
   height: 70px;
+  backdrop-filter: blur(5px);
   top: 0;
   left: 0;
   right: 0;
@@ -713,8 +714,8 @@ Banner Style
   margin-top: 0px;
   height: 100vh;
   min-height: 700px;
-  color: #fff;
-  background-color: #222;
+  color: #ffffff;
+  overflow: hidden;
   position: relative;
 }
 #section-1 .content-slider {
@@ -746,7 +747,7 @@ Banner Style
 }
 #section-1 .more-info {
   margin-top: 60px;
-  background-color: #fff;
+  backdrop-filter: blur(15px);
   padding: 30px 60px;
   border-radius: 61px;
   position: absolute;
@@ -803,12 +804,14 @@ Banner Style
 #section-1 .content-slider .slider .banner .banner-inner-wrapper h2 {
   font-weight: 500;
   font-size: 20px;
-  color: #fff;
+  color: #ffffff;
+  text-shadow: #111 0.1em 0.1em 0.2em;
   margin-bottom: 20px;
 }
 #section-1 .content-slider .slider .banner .banner-inner-wrapper h1 {
   font-size: 50px;
   color: #fff;
+  text-shadow: #111 0.1em 0.1em 0.2em;
   font-weight: 700;
   margin-bottom: 30px;
 }
@@ -818,11 +821,11 @@ Banner Style
   transition: 0.3s;
 }
 #section-1 .content-slider .slider #top-banner-1 {
-  background: url('../images/banner-01.jpg') no-repeat center center;
+  background: url('../images/banner-argentina.jpg') no-repeat center center;
   background-size: cover;
 }
 #section-1 .content-slider .slider #top-banner-2 {
-  background: url('../images/banner-02.jpg') no-repeat center center;
+  background: url('../images/banner-peru.jpg') no-repeat center center;
   background-size: cover;
 }
 #section-1 .content-slider .slider #top-banner-3 {
@@ -1169,6 +1172,7 @@ About Page Style
 .about-main-content .content h2 {
   color: #fff;
   position: relative;
+  text-shadow: #000000 0.1em 0.1em 0.2em;
   z-index: 2;
   font-size: 50px;
   margin-bottom: 25px;
@@ -1186,6 +1190,7 @@ About Page Style
 .about-main-content .content h4 {
   color: #fff;
   position: relative;
+  text-shadow: #000000 0.1em 0.1em 0.2em;
   z-index: 2;
   font-size: 20px;
   font-weight: 400;
@@ -1194,6 +1199,7 @@ About Page Style
 .about-main-content .content p {
   color: #fff;
   position: relative;
+  text-shadow: #000000 0.1em 0.1em 0.2em;
   z-index: 2;
   padding: 0px 15%;
 }
@@ -1244,6 +1250,7 @@ About Page Style
 .cities-town .slider-content .item .thumb h4 {
   position: absolute;
   left: 30px;
+  text-shadow: #111 0.1em 0.1em 0.2em;
   bottom: 30px;
   font-size: 20px;
   color: #fff;

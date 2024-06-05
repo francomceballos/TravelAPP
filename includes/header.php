@@ -65,7 +65,6 @@ https://templatemo.com/tm-580-woox-travel
                     <!-- ***** Menu Start ***** -->
                     <ul class="nav">
                         <li><a href="index.php" class="active">Home</a></li>
-                        <li><a href="about.php">About</a></li>
                         <li><a href="deals.php">Deals</a></li>
                         <!-- user menu -->
                         <?php if(isset($_SESSION['username'])): ?>
