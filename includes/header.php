@@ -15,7 +15,7 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-    <title>WoOx Travel Bootstrap 5 Theme</title>
+    <title>TravelAPP</title>
 
     <!-- Bootstrap core CSS -->
     <link href="<?php echo BASE_URL; ?>vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -58,8 +58,9 @@ https://templatemo.com/tm-580-woox-travel
             <div class="col-12">
                 <nav class="main-nav">
                     <!-- ***** Logo Start ***** -->
-                    <a href="index.php" class="logo">
-                        <img src="assets/images/logo.png" alt="">
+                    <a href="index.php" style="margin-top: 15px">
+                      <h2 class="logo-text text-white">TravelAPP</h2>
+                        <!--<img src="assets/images/logo.png" alt="">-->
                     </a>
                     <!-- ***** Logo End ***** -->
                     <!-- ***** Menu Start ***** -->
