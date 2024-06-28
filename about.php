@@ -16,11 +16,11 @@
     $singleImage = $citiesImages->fetchAll(PDO::FETCH_OBJ);
 
 
-    $cities = $conn->("SELECT cities.id AS id, cities.name AS name, cities.image AS image, 
+    $cities = $conn->query("SELECT cities.id AS id, cities.name AS name, cities.image AS image, 
     cities.trip_days AS trip_days, cities.price AS price, 
     COUNT(bookings.city_id) AS count_bookings FROM cities JOIN bookings ON cities.id = bookings.city_id
     GROUP BY (bookings.city_id)");
-    
+
   }
 
 
