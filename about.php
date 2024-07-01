@@ -18,17 +18,13 @@
 
     $cities = $conn->query("SELECT cities.id AS id, cities.name AS name, cities.image AS image, 
     cities.trip_days AS trip_days, cities.price AS price, 
-    COUNT(bookings.city_id) AS count_bookings FROM cities JOIN bookings ON cities.id = bookings.city_id
+    COUNT(bookings.city_id) AS count_bookings FROM cities LEFT JOIN bookings ON cities.id = bookings.city_id
     WHERE cities.country_id = '$id' GROUP BY (bookings.city_id)");
 
     $cities->execute();
     $allCities = $cities->fetchAll(PDO::FETCH_OBJ);
 
   }
-
-
-
-
 
 ?>
 
@@ -54,7 +50,7 @@
   <!-- ***** Main Banner Area End ***** -->
   
   <div class="cities-town">
-    <div class="container" style="background-image: url(assets/images/<?php echo $singleCountry->image; ?>)">
+    <div class="container">
       <div class="row" >
         <div class="slider-content">
           <div class="row">
@@ -125,7 +121,7 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-6 align-self-center">
-          <div class="left-image">
+          <div class="left-image">  
             <img src="assets/images/about-left-image.jpg" alt="">
           </div>
         </div>

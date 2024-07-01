@@ -1152,13 +1152,16 @@ About Page Style
 }
 
 .blur-bg {
-	width: 100%;
-  height: 100%;
-  background: fixed;
-  filter: blur(65px);
   position: absolute;
-  left: 0;
   top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  filter: blur(15px);
   z-index: 1;
 }
 
@@ -1168,7 +1171,7 @@ About Page Style
   padding: 120px 60px;
   position: relative;
   overflow: hidden;
-  z-index: 2;
+  z-index: 2; 
 }
 
 .about-main-content .content h2 {
@@ -1227,7 +1230,7 @@ About Page Style
   max-height: 100%;
   position: relative;
   margin-top: -70px;
-  background-color: #fff;
+  background-color: white;
   border-radius: 23px;
   padding: 60px;
   box-shadow: 0px 0px 15px rgba(0,0,0,0.15);
@@ -1552,10 +1555,10 @@ body #user-button .u-icons a div {
   padding: 0.5rem;
   transition: 0s;
 }
-body #user-button .u-icons a[href="https://twitter.com/Osorpenke"] {
+body #user-button .u-icons {
   position: relative;
 }
-body #user-button .u-icons a[href="https://twitter.com/Osorpenke"]:before {
+body #user-button .u-icons :before {
   content: "Middle Click";
   position: absolute;
   top: -1.5rem;
@@ -1570,14 +1573,14 @@ body #user-button .u-icons a[href="https://twitter.com/Osorpenke"]:before {
   padding: 0.25rem 0.5rem;
   border-radius: 0.25rem;
 }
-body #user-button .u-icons a[href="https://twitter.com/Osorpenke"].show:before {
+body #user-button .u-icons .show:before {
   opacity: 1;
   transition: 0.25s ease-out;
 }
-body #user-button .u-icons a[href="https://twitter.com/Osorpenke"] div {
+body #user-button .u-icons  div {
   color: #1da1f2;
 }
-body #user-button .u-icons a[href="https://codepen.io/z-"] div {
+body #user-button .u-icons  div {
   background: black;
   color: white;
 }
@@ -1671,12 +1674,7 @@ body #user-button:hover .u-icons, body #user-button:focus-within .u-icons {
   height: 300% !important;
 }
 
-@media (prefers-color-scheme: dark) {
-  body:not(.light) {
-    background: #232223;
-    color: white;
-  }
-}
+
 body .credit {
   position: absolute;
   bottom: 20px;
