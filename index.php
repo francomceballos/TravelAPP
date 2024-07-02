@@ -101,7 +101,7 @@
                         <h4><?php echo $country->name ?></h4>
                         <span><?php echo $country->continent ?></span>
                         <div class="main-button">
-                          <a href="about.php?id='<?php echo $country->id ?>'">Explore More</a>
+                          <a href="about.php?id=<?php echo $country->id ?>">Explore More</a>
                         </div>
                         <p><?php echo substr($country->description, 0, 200) . " ..." ?></p>
                         <ul class="info">
@@ -110,7 +110,7 @@
                           <li><i class="fa fa-home"></i> $<?php echo $country->avg_price ?></li>
                         </ul>
                         <div class="text-button">
-                          <a href="about.php?id='<?php echo $country->id ?>'">Need Directions ? <i class="fa fa-arrow-right"></i></a>
+                          <a href="about.php?id=<?php echo $country->id ?>">Need Directions ? <i class="fa fa-arrow-right"></i></a>
                         </div>
                       </div>
                     </div>

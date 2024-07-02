@@ -1,77 +1,58 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php 
+  require "includes/header.php";
+  require "config/config.php";
 
-  <head>
+//  if(isset($_SESSION['username'])) {
+//    header("Location: index.php");
+//}
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+if(isset($_GET['id'])) {
+  $id = $_GET['id'];
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  $city = $conn->query("SELECT * FROM cities WHERE id = '$id'");
+  $city->execute();
 
-    <title>WoOx Travel Reservation Page</title>
+  $getCity = $city->fetch(PDO::FETCH_OBJ);
+}
+  if(isset($_POST['submit'])) {
+      if(empty($_POST['name']) || empty($_POST['phone_number']) || empty($_POST['num_of_guests']) || empty($_POST['checkin_date']) 
+      || empty($_POST['destination'])) {
+          echo "Please fill in all fields";
+      } else {
+          $name = $_POST['name'];
+          $phone_number = $_POST['phone_number'];
+          $num_of_guests = $_POST['num_of_guests'];
+          $checkin_date = $_POST['checkin_date'];
+          $destination = $_POST['destination'];
+          $status = "Pending";
+          $city_id = $id;
+          $user_id = $_SESSION['user_id'];
 
-    <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+          $insert = $conn->prepare( "INSERT INTO bookings (name, phone_number, num_of_guests, checkin_date, destination, status, city_id, user_id ) 
+          VALUES (:name, :phone_number, :num_of_guests, :checkin_date, :destination, :status, :city_id, :user_id)");
+          $insert ->execute([
+              ':name' => $name,
+              ':phone_number' => $phone_number,
+              ':num_of_guests' => $num_of_guests,
+              ':checkin_date' => $checkin_date,
+              ':destination' => $destination,
+              ':status' => $status,
+              ':city_id' => $city_id,
+              ':user_id' => $user_id
+          ]);
 
-    <!-- Additional CSS Files -->
-    <link rel="stylesheet" href="assets/css/fontawesome.css">
-    <link rel="stylesheet" href="assets/css/templatemo-woox-travel.css">
-    <link rel="stylesheet" href="assets/css/owl.css">
-    <link rel="stylesheet" href="assets/css/animate.css">
-    <link rel="stylesheet"href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
-<!--
 
-TemplateMo 580 Woox Travel
+          //    header("Location: login.php");
+          
+      }
+  }
 
-https://templatemo.com/tm-580-woox-travel
 
--->
-  </head>
 
-<body>
 
-  <!-- ***** Preloader Start ***** -->
-  <div id="js-preloader" class="js-preloader">
-    <div class="preloader-inner">
-      <span class="dot"></span>
-      <div class="dots">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-    </div>
-  </div>
-  <!-- ***** Preloader End ***** -->
 
-  <!-- ***** Header Area Start ***** -->
-  <header class="header-area header-sticky">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <nav class="main-nav">
-                    <!-- ***** Logo Start ***** -->
-                    <a href="index.html" class="logo">
-                        <img src="assets/images/logo.png" alt="">
-                    </a>
-                    <!-- ***** Logo End ***** -->
-                    <!-- ***** Menu Start ***** -->
-                    <ul class="nav">
-                      <li><a href="index.html">Home</a></li>
-                      <li><a href="deals.html">Deals</a></li>
-                    
-                      <li><a href="login.html">Login</a></li>
-                      <li><a href="register.html">Register</a></li>
-                    </ul>   
-                    <a class='menu-trigger'>
-                        <span>Menu</span>
-                    </a>
-                    <!-- ***** Menu End ***** -->
-                </nav>
-            </div>
-        </div>
-    </div>
-  </header>
-  <!-- ***** Header Area End ***** -->
+?>
+
 
   <div class="second-page-heading">
     <div class="container">
@@ -119,7 +100,7 @@ https://templatemo.com/tm-580-woox-travel
       <div class="row">
        
         <div class="col-lg-12">
-          <form id="reservation-form" name="gs" method="submit" role="search" action="#">
+          <form id="reservation-form" method="POST" role="search" action="reservation.php?id=<?php echo $id; ?>">
             <div class="row">
               <div class="col-lg-12">
                 <h4>Make Your <em>Reservation</em> Through This <em>Form</em></h4>
@@ -127,19 +108,19 @@ https://templatemo.com/tm-580-woox-travel
               <div class="col-lg-6">
                   <fieldset>
                       <label for="Name" class="form-label">Your Name</label>
-                      <input type="text" name="Name" class="Name" placeholder="Ex. John Smithee" autocomplete="on" required>
+                      <input type="text" name="name" class="Name" placeholder="Ex. John Smithee" autocomplete="on" required>
                   </fieldset>
               </div>
               <div class="col-lg-6">
                 <fieldset>
                     <label for="Number" class="form-label">Your Phone Number</label>
-                    <input type="text" name="Number" class="Number" placeholder="Ex. +xxx xxx xxx" autocomplete="on" required>
+                    <input type="text" name="phone_number" class="Number" placeholder="Ex. +xxx xxx xxx" autocomplete="on" required>
                 </fieldset>
               </div>
               <div class="col-lg-6">
                   <fieldset>
                       <label for="chooseGuests" class="form-label">Number Of Guests</label>
-                      <select name="Guests" class="form-select" aria-label="Default select example" id="chooseGuests" onChange="this.form.click()">
+                      <select name="num_of_guests" class="form-select" aria-label="Default select example" id="chooseGuests" onChange="this.form.click()">
                           <option selected>ex. 3 or 4 or 5</option>
                           <option type="checkbox" name="option1" value="1">1</option>
                           <option value="2">2</option>
@@ -151,24 +132,18 @@ https://templatemo.com/tm-580-woox-travel
               <div class="col-lg-6">
                 <fieldset>
                     <label for="Number" class="form-label">Check In Date</label>
-                    <input type="date" name="date" class="date" required>
+                    <input type="date" name="checkin_date" class="date" required>
                 </fieldset>
               </div>
               <div class="col-lg-12">
-                  <fieldset>
-                      <label for="chooseDestination" class="form-label">Choose Your Destination</label>
-                      <select name="Destination" class="form-select" aria-label="Default select example" id="chooseCategory" onChange="this.form.click()">
-                          <option selected>ex. Switzerland, Lausanne</option>
-                          <option value="Italy, Roma">Italy, Roma</option>
-                          <option value="France, Paris">France, Paris</option>
-                          <option value="Engaland, London">Engaland, London</option>
-                          <option value="Switzerland, Lausanne">Switzerland, Lausanne</option>
-                      </select>
-                  </fieldset>
+                <fieldset>
+                    <label for="Number" class="form-label">Your Destination</label>
+                    <input type="hidden" value="<?php echo $getCity->name; ?>" name="destination" class="Number" placeholder="Ex. Argentina, Bariloche" autocomplete="on" required>
+                </fieldset>
               </div>
               <div class="col-lg-12">                        
                   <fieldset>
-                      <button class="main-button">Make Your Reservation Now</button>
+                      <button name="submit" type="submit" class="main-button">Make Your Reservation Now</button>
                   </fieldset>
               </div>
             </div>
@@ -178,37 +153,4 @@ https://templatemo.com/tm-580-woox-travel
     </div>
   </div>
 
-  <footer>
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <p>Copyright © 2036 <a href="#">WoOx Travel</a> Company. All rights reserved. 
-          <br>Design: <a href="https://templatemo.com" target="_blank" title="free CSS templates">TemplateMo</a> Distribution: <a href="https://themewagon.com target="_blank" >ThemeWagon</a></p>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-
-  <!-- Scripts -->
-  <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-
-  <script src="assets/js/isotope.min.js"></script>
-  <script src="assets/js/owl-carousel.js"></script>
-  <script src="assets/js/wow.js"></script>
-  <script src="assets/js/tabs.js"></script>
-  <script src="assets/js/popup.js"></script>
-  <script src="assets/js/custom.js"></script>
-
-  <script>
-    $(".option").click(function(){
-      $(".option").removeClass("active");
-      $(this).addClass("active"); 
-    });
-  </script>
-
-  </body>
-
-</html>
+  <?php require "includes/footer.php"; ?>

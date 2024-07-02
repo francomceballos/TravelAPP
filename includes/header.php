@@ -59,7 +59,7 @@ https://templatemo.com/tm-580-woox-travel
                 <nav class="main-nav">
                     <!-- ***** Logo Start ***** -->
                     <a href="index.php" style="margin-top: 15px">
-                      <h2 class="logo-text text-white">TravelAPP</h2>
+                      <h2 class="logo-text text-white"> TravelAPP</h2>
                         <!--<img src="assets/images/logo.png" alt="">-->
                     </a>
                     <!-- ***** Logo End ***** -->
