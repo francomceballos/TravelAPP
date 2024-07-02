@@ -28,6 +28,11 @@ if(isset($_GET['id'])) {
           $city_id = $id;
           $user_id = $_SESSION['user_id'];
 
+          if(date("Y-m-d") > $checkin_date) {
+              echo "<div class='alert alert-danger mt-4' role='alert'>Checkin date cannot be in the past</div>";
+          }else {
+            
+          
           $insert = $conn->prepare( "INSERT INTO bookings (name, phone_number, num_of_guests, checkin_date, destination, status, city_id, user_id ) 
           VALUES (:name, :phone_number, :num_of_guests, :checkin_date, :destination, :status, :city_id, :user_id)");
           $insert ->execute([
@@ -40,7 +45,7 @@ if(isset($_GET['id'])) {
               ':city_id' => $city_id,
               ':user_id' => $user_id
           ]);
-
+        }
 
           //    header("Location: login.php");
           
@@ -61,7 +66,7 @@ if(isset($_GET['id'])) {
           <h4>Book Prefered Deal Here</h4>
           <h2>Make Your Reservation</h2>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt uttersi labore et dolore magna aliqua is ipsum suspendisse ultrices gravida</p>
-          <div class="main-button"><a href="about.html">Discover More</a></div>
+          <div class="main-button"><a href="index.php">Discover More</a></div>
         </div>
       </div>
     </div>
@@ -132,12 +137,12 @@ if(isset($_GET['id'])) {
               <div class="col-lg-6">
                 <fieldset>
                     <label for="Number" class="form-label">Check In Date</label>
-                    <input type="date" name="checkin_date" class="date" required>
+                    <input type="date" name="checkin_date" class="date" required onchange="checkDate(this)">
                 </fieldset>
               </div>
               <div class="col-lg-12">
                 <fieldset>
-                    <label for="Number" class="form-label">Your Destination</label>
+                    <label for="Number" class="form-label"></label>
                     <input type="hidden" value="<?php echo $getCity->name; ?>" name="destination" class="Number" placeholder="Ex. Argentina, Bariloche" autocomplete="on" required>
                 </fieldset>
               </div>
@@ -153,4 +158,21 @@ if(isset($_GET['id'])) {
     </div>
   </div>
 
+              <script>
+                function checkDate(dateInput) {
+                    let today = new Date();
+                    let checkInDate = new Date(dateInput.value);
+                    if (checkInDate < today) {
+                      let alertDiv = document.createElement("div");
+                      alertDiv.setAttribute("class", "alert alert-danger");
+                      alertDiv.setAttribute("role", "alert");
+                      alertDiv.textContent = "Check In Date can't be older than today";
+                      dateInput.parentNode.insertBefore(alertDiv, dateInput);
+                      setTimeout(function() {
+                        alertDiv.remove();
+                      }, 3000);
+                      dateInput.value = "";
+                    }
+                }
+              </script>
   <?php require "includes/footer.php"; ?>
