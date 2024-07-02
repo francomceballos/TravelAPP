@@ -170,7 +170,7 @@ if(isset($_GET['id'])) {
                       dateInput.parentNode.insertBefore(alertDiv, dateInput);
                       setTimeout(function() {
                         alertDiv.remove();
-                      }, 3000);
+                      }, 5000);
                       dateInput.value = "";
                     }
                 }
