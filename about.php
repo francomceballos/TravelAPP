@@ -9,13 +9,14 @@
 
     $singleCountry = $country->fetch(PDO::FETCH_OBJ);
 
+    //images of every city
 
     $citiesImages = $conn->query("SELECT * FROM cities WHERE country_id = '$id'");
     $citiesImages->execute();
 
     $singleImage = $citiesImages->fetchAll(PDO::FETCH_OBJ);
 
-
+    //cities with bookings
     $cities = $conn->query("SELECT cities.id AS id, cities.name AS name, cities.image AS image, 
     cities.trip_days AS trip_days, cities.price AS price, 
     COUNT(bookings.city_id) AS count_bookings FROM cities LEFT JOIN bookings ON cities.id = bookings.city_id
@@ -23,6 +24,20 @@
 
     $cities->execute();
     $allCities = $cities->fetchAll(PDO::FETCH_OBJ);
+
+    //cities of every country
+
+    $cities_country = $conn->query("SELECT COUNT(country_id) AS num_city FROM cities
+    WHERE country_id = '$id'");
+    $cities_country->execute();
+    $num_cities = $cities_country->fetch(PDO::FETCH_OBJ);
+
+    //number of bookings of every country
+
+    $num_country = $conn->query("SELECT COUNT(bookings.city_id) AS count_bookings FROM cities JOIN bookings ON cities.id
+     = bookings.city_id WHERE cities.country_id = '$id'");
+    $num_country->execute();
+    $num_bookings = $num_country->fetch(PDO::FETCH_OBJ);
 
   }
 
@@ -136,12 +151,12 @@
               <div class="info-item">
                 <div class="row">
                   <div class="col-lg-6">
-                    <h4>12.560+</h4>
+                    <h4><?php echo $num_cities->num_city ; ?> +</h4>
                     <span>Amazing Places</span>
                   </div>
                   <div class="col-lg-6">
-                    <h4>240.580+</h4>
-                    <span>Different Check-ins Yearly</span>
+                    <h4><?php echo $num_bookings->count_bookings ; ?> +</h4>
+                    <span>Different Check-ins</span>
                   </div>
                 </div>
               </div>
