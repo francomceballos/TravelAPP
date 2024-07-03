@@ -31,7 +31,7 @@
 ?>
 
 
-<div class="reservation-form ">
+<div class="reservation-form " style="margin-top: 200px;">
     <div class="container">
       <div class="row ">
         <div class="col-lg-12">

@@ -39,6 +39,8 @@
     $num_country->execute();
     $num_bookings = $num_country->fetch(PDO::FETCH_OBJ);
 
+  }else {
+    header("Location: 404.php");
   }
 
 ?>
@@ -119,9 +121,13 @@
                     <li><i class="fa fa-plane"></i> Airplane Bill Included</li>
                     <li><i class="fa fa-building"></i> Daily Places Visit</li>
                   </ul>
-                  <div class="main-button">
-                    <a href="reservation.php?id=<?php echo $city->id ;?>">Make a Reservation</a>
-                  </div>
+                  <?php if(isset($_SESSION['user_id'])) : ?>
+                    <div class="main-button">
+                      <a href="reservation.php?id=<?php echo $city->id ;?>">Make a Reservation</a>
+                    </div>
+                  <?php else: ?>
+                    <p>Please <a href="<?php echo BASE_URL; ?>auth/login.php">Login</a> or <a href="<?php echo BASE_URL; ?>auth/register.php">Register</a> to make a reservation</p>
+                  <?php endif; ?>
                 </div>
               </div>
             </div>

@@ -2,9 +2,9 @@
   require "includes/header.php";
   require "config/config.php";
 
-//  if(isset($_SESSION['username'])) {
-//    header("Location: index.php");
-//}
+      if(!isset($_SESSION['username'])) {
+        header("Location: ".BASE_URL."");
+      }
 
 if(isset($_GET['id'])) {
   $id = $_GET['id'];
@@ -29,6 +29,8 @@ if(isset($_GET['id'])) {
           $user_id = $_SESSION['user_id'];
           
           $payment = $num_of_guests * $getCity->price;
+
+          $_SESSION['payment'] = $payment;
           
 
           if(date("Y-m-d") > $checkin_date) {
@@ -50,6 +52,8 @@ if(isset($_GET['id'])) {
               ':user_id' => $user_id,
               ':payment' => $payment
           ]);
+
+          header("location: pay.php");
         }
           
       }
