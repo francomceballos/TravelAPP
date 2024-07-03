@@ -27,14 +27,18 @@ if(isset($_GET['id'])) {
           $status = "Pending";
           $city_id = $id;
           $user_id = $_SESSION['user_id'];
+          
+          $payment = $num_of_guests * $getCity->price;
+          
 
           if(date("Y-m-d") > $checkin_date) {
-              echo "<div class='alert alert-danger mt-4' role='alert'>Checkin date cannot be in the past</div>";
+              echo "<script>alert('Please choose a date in the future!')</script>";
           }else {
             
           
-          $insert = $conn->prepare( "INSERT INTO bookings (name, phone_number, num_of_guests, checkin_date, destination, status, city_id, user_id ) 
-          VALUES (:name, :phone_number, :num_of_guests, :checkin_date, :destination, :status, :city_id, :user_id)");
+          $insert = $conn->prepare( "INSERT INTO bookings (name, phone_number, num_of_guests, checkin_date, destination, status, city_id, user_id, payment) 
+          VALUES (:name, :phone_number, :num_of_guests, :checkin_date, :destination, :status, :city_id, :user_id, :payment)");
+
           $insert ->execute([
               ':name' => $name,
               ':phone_number' => $phone_number,
@@ -43,18 +47,13 @@ if(isset($_GET['id'])) {
               ':destination' => $destination,
               ':status' => $status,
               ':city_id' => $city_id,
-              ':user_id' => $user_id
+              ':user_id' => $user_id,
+              ':payment' => $payment
           ]);
         }
-
-          //    header("Location: login.php");
           
       }
   }
-
-
-
-
 
 ?>
 
@@ -130,14 +129,30 @@ if(isset($_GET['id'])) {
                           <option type="checkbox" name="option1" value="1">1</option>
                           <option value="2">2</option>
                           <option value="3">3</option>
-                          <option value="4+">4+</option>
+                          <option value="4">4</option>
+                          <option value="5">5</option>
+                          <option value="6">6</option>
+                          <option value="7">7</option>
+                          <option value="8">8</option>
+                          <option value="9">9</option>
+                          <option value="10">10</option>
+                          <option value="11">11</option>
+                          <option value="12">12</option>
+                          <option value="13">13</option>
+                          <option value="14">14</option>
+                          <option value="15">15</option>
+                          <option value="16">16</option>
+                          <option value="17">17</option>
+                          <option value="18">18</option>
+                          <option value="19">19</option>
+                          <option value="20">20</option>
                       </select>
                   </fieldset>
               </div>
               <div class="col-lg-6">
                 <fieldset>
                     <label for="Number" class="form-label">Check In Date</label>
-                    <input type="date" name="checkin_date" class="date" required onchange="checkDate(this)">
+                    <input type="date" name="checkin_date" class="date">
                 </fieldset>
               </div>
               <div class="col-lg-12">
@@ -158,21 +173,4 @@ if(isset($_GET['id'])) {
     </div>
   </div>
 
-              <script>
-                function checkDate(dateInput) {
-                    let today = new Date();
-                    let checkInDate = new Date(dateInput.value);
-                    if (checkInDate < today) {
-                      let alertDiv = document.createElement("div");
-                      alertDiv.setAttribute("class", "alert alert-danger");
-                      alertDiv.setAttribute("role", "alert");
-                      alertDiv.textContent = "Check In Date can't be older than today";
-                      dateInput.parentNode.insertBefore(alertDiv, dateInput);
-                      setTimeout(function() {
-                        alertDiv.remove();
-                      }, 5000);
-                      dateInput.value = "";
-                    }
-                }
-              </script>
   <?php require "includes/footer.php"; ?>
