@@ -57,14 +57,14 @@ https://templatemo.com/tm-580-woox-travel
             <div class="col-12">
                 <nav class="main-nav">
                     <!-- ***** Logo Start ***** -->
-                    <a href="index.php" style="margin-top: 15px">
+                    <a href="<?php echo BASE_URL; ?>index.php" style="margin-top: 15px">
                       <h2 class="logo-text text-white"> TravelAPP</h2>
-                        <!--<img src="assets/images/logo.png" alt="">-->
+                        <!-- <img src="assets/images/logo.png" alt="">-->
                     </a>
                     <!-- ***** Logo End ***** -->
                     <!-- ***** Menu Start ***** -->
                     <ul class="nav">
-                        <li><a href="index.php" class="active">Home</a></li>
+                        <li><a href="<?php echo BASE_URL; ?>index.php" class="active">Home</a></li>
                         <li><a href="deals.php">Deals</a></li>
                         <!-- user menu -->
                         <?php if(isset($_SESSION['username'])): ?>

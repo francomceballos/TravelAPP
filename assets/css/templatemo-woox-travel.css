@@ -344,7 +344,7 @@ Header Style
 
 .header-area {
   position: absolute;
-  backdrop-filter: blur(5px);
+  background-color: #071952;
   height: 70px;
   top: 0;
   left: 0;
@@ -357,14 +357,12 @@ Header Style
 }
 
 .header-area .main-nav {
-  background: transparent;
   display: flex;
   padding: 0px 30px;
 }
 
 .background-header .main-nav {
   padding: 0px;
-  background-color: transparent;
 }
 
 .header-area .main-nav .logo {

@@ -18,10 +18,10 @@
 ?>
 <div class="container" style="margin-top: 200px;margin-bottom: 1000px">
     <div class="row">
-        <div class="col-lg-2">
-            <aside>
-                <li><h4><a class="d-inline-flex align-items-center rounded mb-2" href="dashboard.php"><i class="fa fa-dashboard"></i> Dashboard</a></h4></li>
-                <li><h4><a class="d-inline-flex align-items-center rounded" href="<?php echo BASE_URL; ?>users/bookings.php?id=<?php echo $_SESSION['user_id']; ?>"><i class="fa fa-book"></i> Bookings</a></h4></li>
+        <div class="col-lg-2 rounded-4 shadow" style="background-color: #37B7C3;">
+            <aside style="margin-top: 25px;">
+                <li><h4><a class="d-inline-flex align-items-center rounded mb-3" href="dashboard.php"><i class="fa fa-dashboard"></i>Dashboard</a></h4></li>
+                <li><h4><a class="d-inline-flex align-items-center rounded" href="<?php echo BASE_URL; ?>users/bookings.php?id=<?php echo $_SESSION['user_id']; ?>"><i class="fa fa-book"></i>Bookings</a></h4></li>
             </aside>
         </div>
         <div class="col-lg-9">
