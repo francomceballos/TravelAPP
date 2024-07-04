@@ -73,7 +73,7 @@ https://templatemo.com/tm-580-woox-travel
                           <?php echo $_SESSION['username']; ?>
                         </a>
                           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                          <li><a class="dropdown-item text-dark" href="#">Action</a></li>
+                          <li><a class="dropdown-item text-dark" href="<?php echo BASE_URL; ?>users/bookings.php?id=<?php echo $_SESSION['user_id']; ?>">Your bookings</a></li>
                           <li><a class="dropdown-item text-dark" href="#">Another action</a></li>
                           <li><hr class="dropdown-divider"></li>
                           <li><a class="dropdown-item text-dark" href="<?php echo BASE_URL; ?>auth/logout.php">Log out</a></li>
