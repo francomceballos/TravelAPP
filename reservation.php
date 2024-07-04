@@ -57,6 +57,8 @@ if(isset($_GET['id'])) {
         }
           
       }
+  }else {
+    header("Location: 404.php");
   }
 
 ?>
