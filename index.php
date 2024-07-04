@@ -49,7 +49,7 @@
                       </div>
                       <div class="col-lg-3 col-sm-6 col-6">
                         <div class="main-button">
-                          <a href="about.php?id='<?php echo $country->id ?>'">Explore More</a>
+                          <a href="about.php?id=<?php echo $country->id ?>">Explore More</a>
                         </div>
                       </div>
                     </div>

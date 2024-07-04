@@ -51,7 +51,7 @@ https://templatemo.com/tm-580-woox-travel
   <!-- ***** Preloader End ***** -->
 
   <!-- ***** Header Area Start ***** -->
-  <header class="header-area header-sticky" style="background-color: transparent;">
+  <header class="header-area header-sticky">
     <div class="container">
         <div class="row">
             <div class="col-12">

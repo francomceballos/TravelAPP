@@ -86,7 +86,7 @@ html, body {
 }
 
 a {
-	color: #22b3c1;
+	color: #071952;
   text-decoration: none !important;
 }
 
@@ -104,7 +104,7 @@ ul {
 p {
   font-size: 15px;
   line-height: 30px;
-  color: #afafaf;
+  color: black;
 }
 
 img {
@@ -124,18 +124,18 @@ body {
 }
 
 ::selection {
-  background: #22b3c1;
+  background: #071952;
   color: #fff;
 }
 
 ::-moz-selection {
-  background: #22b3c1;
+  background: #071952;
   color: #fff;
 }
 
 .text-button a {
   font-size: 14px;
-  color: #22b3c1;
+  color: #071952;
   font-weight: 500;
   transition: all .3s;
 }
@@ -154,7 +154,7 @@ body {
   color: #ffffff;
   background-color: transparent;
   text-shadow: #111 0.1em 0.1em 0.2em;
-  border: 1px solid #22b3c1;
+  border: 1px solid #071952;
   padding: 12px 30px;
   display: inline-block;
   border-radius: 25px;
@@ -168,15 +168,15 @@ body {
 }
 
 .border-button a:hover {
-  background-color: #22b3c1;
+  background-color: #071952;
   color: #fff;
 }
 
 .main-button a {
   font-size: 14px;
   color: #fff;
-  background-color: #22b3c1;
-  border: 1px solid #22b3c1;
+  background-color: #071952;
+  border: 1px solid #071952;
   padding: 12px 30px;
   display: inline-block;
   border-radius: 25px;
@@ -190,7 +190,7 @@ body {
 
 .main-button a:hover {
   background-color: #fff;
-  color: #22b3c1;
+  color: #071952;
   border: 1px solid #fff;
 }
 
@@ -289,7 +289,7 @@ Pre-loader Style
   height: 16px;
   top: 12px;
   left: 15px;
-  background: #22b3c1;
+  background: #071952;
   border-radius: 50%;
   -webkit-transform: translateX(0);
   transform: translateX(0);
@@ -312,7 +312,7 @@ Pre-loader Style
   width: 16px;
   height: 16px;
   margin-left: 16px;
-  background: #22b3c1;
+  background: #071952;
   border-radius: 50%;
 }
 
@@ -334,7 +334,7 @@ Header Style
   top: 0!important;
   left: 0;
   right: 0;
-  background-color: #1da1f2!important;
+  background-color: #071952!important;
   box-shadow: 0px 0px 10px rgba(0,0,0,0.15)!important;
   -webkit-transition: all .5s ease 0s;
   -moz-transition: all .5s ease 0s;
@@ -613,14 +613,14 @@ Header Style
   }
   .header-area.header-sticky .nav li a:hover,
   .header-area.header-sticky .nav li a.active {
-    color: #22b3c1!important;
+    color: #071952!important;
     opacity: 1;
   }
   .header-area.header-sticky .nav li.search-icon a {
     width: 100%;
   }
   .header-area {
-    background-color: #22b3c1;
+    background-color: #071952;
     padding: 0px 15px;
     height: 100px;
     box-shadow: none;
@@ -674,7 +674,7 @@ Header Style
   }
   .header-area .main-nav .nav li a:hover {
     background: #f7f7f7 !important;
-    color: #22b3c1!important;
+    color: #071952!important;
   }
   .header-area .main-nav .nav li.has-sub ul.sub-menu {
     position: relative;
@@ -762,14 +762,14 @@ Banner Style
   display: inline-block;
 }
 #section-1 .more-info i {
-  color: #22b3c1;
+  color: #071952;
   font-size: 24px;
   width: 60px;
   height: 60px;
   display: inline-block;
   text-align: center;
   line-height: 58px;
-  border: 1px solid #22b3c1;
+  border: 1px solid #071952;
   border-radius: 50%;
   float: left;
   margin-right: 20px;
@@ -777,13 +777,13 @@ Banner Style
 #section-1 .more-info h4 {
   text-align: left;
   font-size: 20px;
-  color: #22b3c1;
+  color: #EBF4F6;
   font-weight: 700;
   line-height: 28px;
 }
 #section-1 .more-info h4 span {
   font-size: 15px;
-  color: #afafaf;
+  color: #EBF4F6;
   font-weight: 400;
 }
 #section-1 .main-button {
@@ -791,8 +791,8 @@ Banner Style
   text-align: right;
 }
 #section-1 .main-button a:hover {
-  background-color: #22b3c1;
-  border-color: #22b3c1;
+  background-color: #071952;
+  border-color: #071952;
   color: #fff;
   opacity: 0.8;
 }
@@ -821,8 +821,8 @@ Banner Style
   margin-bottom: 30px;
 }
 #section-1 .content-slider .slider .banner .banner-inner-wrapper .learn-more-button a:hover {
-  color: #22b3c1;
-  border-color: #22b3c1;
+  color: #071952;
+  border-color: #071952;
   transition: 0.3s;
 }
 #section-1 .content-slider .slider #top-banner-1 {
@@ -886,7 +886,7 @@ Banner Style
   width: inherit;
   height: inherit;
   margin-left: -100%;
-  background: #22b3c1;
+  background: #071952;
 }
 #section-1 .content-slider nav .controls label span.text {
   font-size: 20px;
@@ -896,7 +896,7 @@ Banner Style
   width: 100%;
 }
 #section-1 .content-slider nav .controls label:hover {
-  color: #22b3c1;
+  color: #071952;
 }
 #section-1 .content-slider #banner1:checked ~ .slider #top-banner-1,
 #section-1 .content-slider #banner2:checked ~ .slider #top-banner-2,
@@ -983,8 +983,8 @@ Visit Country Style
 }
 
 .visit-country .item .right-content .main-button a:hover {
-  background-color: #22b3c1;
-  border-color: #22b3c1;
+  background-color: #071952;
+  border-color: #071952;
   color: #fff;
   opacity: 0.8;
 }
@@ -1002,7 +1002,7 @@ Visit Country Style
 .visit-country .item .right-content ul li {
   display: inline-block;
   width: 32%;
-  color: #afafaf;
+  color: #071952;
   font-size: 14px;
 }
 
@@ -1036,9 +1036,9 @@ Visit Country Style
   display: inline-block;
   width: 46px;
   height: 46px;
-  border: 1px solid #22b3c1;
+  border: 1px solid #071952;
   line-height: 44px;
-  color: #22b3c1;
+  color: #071952;
   text-align: center;
   font-size: 18px;
   font-weight: 500;
@@ -1047,12 +1047,12 @@ Visit Country Style
 }
 
 .visit-country ul.page-numbers li a:hover {
-  background-color: #22b3c1;
+  background-color: #071952;
   color: #fff;
 }
 
 .visit-country ul.page-numbers li.active a {
-  background-color: #22b3c1;
+  background-color: #071952;
   color: #fff;
 }
 
@@ -1104,7 +1104,7 @@ Call To Action Style
 
 .call-to-action .border-button a:hover {
   background-color: #fff;
-  color: #22b3c1;
+  color: #071952;
 }
 
 
@@ -1115,7 +1115,7 @@ Footer Style
 */
 
 footer {
-  background-color: #22b3c1;
+  background-color: #071952;
   text-align: center;
   padding: 25px 0px;
 }
@@ -1217,7 +1217,7 @@ About Page Style
 
 .about-main-content .content .main-button a {
   background-color: #fff;
-  color: #22b3c1;
+  color: #071952;
   border-color: #fff;
 }
 
@@ -1243,7 +1243,7 @@ About Page Style
 
 .cities-town .slider-content h2 em {
   font-style: normal;
-  color: #22b3c1;
+  color: #071952;
 }
 
 .cities-town .slider-content .item .thumb {
@@ -1294,7 +1294,7 @@ About Page Style
 
 .cities-town .owl-nav .owl-prev:hover::after,
 .cities-town .owl-nav .owl-next:hover::after {
-  color: #22b3c1;
+  color: #071952;
 }
 
 .weekly-offers {
@@ -1339,7 +1339,7 @@ About Page Style
   float: right;
   text-align: right;
   font-size: 20px;
-  color: #22b3c1;
+  color: #071952;
 }
 
 .weekly-offers .item .thumb .text h4 span,
@@ -1371,8 +1371,8 @@ About Page Style
 }
 
 .weekly-offers .item .thumb .text .main-button a:hover {
-  background-color: #22b3c1;
-  border-color: #22b3c1;
+  background-color: #071952;
+  border-color: #071952;
   color: #fff;
   opacity: 0.85;
 }
@@ -1389,12 +1389,12 @@ About Page Style
 .weekly-offers .owl-nav .owl-next::after {
   font-family: "FontAwesome";
   content: '\f061'; 
-  color: #22b3c1;
+  color: #071952;
   font-size: 20px;
   width: 46px;
   height: 46px;
   text-align: center;
-  border: 1px solid #22b3c1;
+  border: 1px solid #071952;
   display: inline-block;
   line-height: 44px;
   border-radius: 50%;
@@ -1409,12 +1409,12 @@ About Page Style
 .weekly-offers .owl-nav .owl-prev::after {
   font-family: "FontAwesome";
   content: '\f060'; 
-  color: #22b3c1;
+  color: #071952;
   font-size: 20px;
   width: 46px;
   height: 46px;
   text-align: center;
-  border: 1px solid #22b3c1;
+  border: 1px solid #071952;
   display: inline-block;
   line-height: 44px;
   border-radius: 50%;
@@ -1425,7 +1425,7 @@ About Page Style
 .weekly-offers .owl-nav .owl-prev:hover::after,
 .weekly-offers .owl-nav .owl-next:hover::after {
   color: #fff;
-  background-color: #22b3c1;
+  background-color: #071952;
 }
 
 .more-about {
@@ -1454,7 +1454,7 @@ About Page Style
 }
 
 .more-about .info-item span {
-  color: #22b3c1;
+  color: #071952;
   font-size: 15px;
 }
 
@@ -1463,8 +1463,8 @@ About Page Style
 }
 
 .more-about .main-button a:hover {
-  background-color: #22b3c1;
-  border-color: #22b3c1;
+  background-color: #071952;
+  border-color: #071952;
   color: #fff;
   opacity: 0.85;
 }
@@ -1738,7 +1738,7 @@ body .options .option {
   transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
 }
 body .options .option {
-  --defaultBackground:#22b3c1;
+  --defaultBackground:#071952;
 }
 body .options .option.active {
   flex-grow: 10000;
@@ -1832,9 +1832,9 @@ body .options .option .label .info .sub {
 }
 
 .best-locations .main-button a:hover {
-  background-color: #22b3c1;
+  background-color: #071952;
   color: #fff;
-  border-color: #22b3c1;
+  border-color: #071952;
   opacity: 0.85;
 }
 
@@ -1876,11 +1876,11 @@ Deals Page Style
 }
 
 .page-heading .border-button a:hover {
-  border-color: #22b3c1;
+  border-color: #071952;
 }
 
 .search-form #search-form {
-  background-color: #22b3c1;
+  background-color: #071952;
   border-bottom-left-radius: 23px;
   border-bottom-right-radius: 23px;
   border-top-left-radius: 23px;
@@ -1933,7 +1933,7 @@ Deals Page Style
 
 .search-form #search-form button:hover {
   background-color: #fff;
-  color: #22b3c1;
+  color: #071952;
 }
 
 .amazing-deals {
@@ -1954,7 +1954,7 @@ Deals Page Style
 }
 
 .amazing-deals .item span.info {
-  color: #22b3c1;
+  color: #071952;
   font-size: 15px;
   margin-bottom: 20px;
   display: block;
@@ -2004,9 +2004,9 @@ Deals Page Style
   display: inline-block;
   width: 46px;
   height: 46px;
-  border: 1px solid #22b3c1;
+  border: 1px solid #071952;
   line-height: 44px;
-  color: #22b3c1;
+  color: #071952;
   text-align: center;
   font-size: 18px;
   font-weight: 500;
@@ -2016,7 +2016,7 @@ Deals Page Style
 
 .amazing-deals ul.page-numbers li.active a,
 .amazing-deals ul.page-numbers li a:hover {
-  background-color: #22b3c1;
+  background-color: #071952;
   color: #fff;
 }
 
@@ -2076,13 +2076,13 @@ Reservation Page Style
 
 .second-page-heading .main-button a {
   border-color: #fff;
-  color: #22b3c1;
+  color: #071952;
   background-color: #fff;
 }
 
 .second-page-heading .main-button a:hover {
-  border-color: #22b3c1;
-  background-color: #22b3c1;
+  border-color: #071952;
+  background-color: #071952;
   color: #fff;
 }
 
@@ -2106,7 +2106,7 @@ Reservation Page Style
   text-align: center;
   line-height: 60px;
   border-radius: 50px;
-  color: #22b3c1;
+  color: #071952;
   font-size: 20px;
   margin-bottom: 20px;
 }
@@ -2119,7 +2119,7 @@ Reservation Page Style
 
 .more-info .info-item a {
   font-size: 15px;
-  color: #22b3c1;
+  color: #071952;
 }
 
 .reservation-form {
@@ -2138,7 +2138,7 @@ Reservation Page Style
 
 .reservation-form #reservation-form h4 em {
   font-style: normal;
-  color: #22b3c1;
+  color: #071952;
 }
 
 .reservation-form #reservation-form {
@@ -2174,8 +2174,8 @@ Reservation Page Style
 .reservation-form #reservation-form button {
   font-size: 14px;
   color: #fff;
-  background-color: #22b3c1;
-  border: 1px solid #22b3c1;
+  background-color: #071952;
+  border: 1px solid #071952;
   padding: 12px 30px;
   width: 100%;
   text-align: center;
